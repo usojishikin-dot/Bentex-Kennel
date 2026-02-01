@@ -1,96 +1,84 @@
 import { motion } from 'framer-motion';
-import { trustFeatures } from '../data/content';
+import { trustFeatures, stats } from '../data/content';
 
 export default function Trust() {
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.15
-            }
-        }
-    };
-
-    const cardVariants = {
-        hidden: { opacity: 0, y: 40 },
-        visible: { opacity: 1, y: 0 }
-    };
-
     return (
-        <section className="section-padding bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-800 relative overflow-hidden">
-            <div className="absolute inset-0">
-                <div className="absolute top-20 left-20 w-40 h-40 bg-indigo-500 rounded-full opacity-20 blur-3xl" />
-                <div className="absolute bottom-20 right-20 w-60 h-60 bg-purple-500 rounded-full opacity-20 blur-3xl" />
-            </div>
-
-            <div className="container-custom relative z-10">
+        <section id="about" className="section-padding bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white">
+            <div className="container-custom">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <span className="inline-block px-4 py-2 bg-white/10 text-indigo-200 rounded-full text-xl font-semibold mb-20 backdrop-blur-sm">
-                        Why Choose Us
+                    <span className="inline-block px-4 py-2 bg-white/10 text-amber-300 rounded-full text-sm font-semibold mb-4">
+                        Why Adopt From Us
                     </span>
-                    <h2 className="section-title text-white">
-                        Why Families Trust Us
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6 mt-6">
+                        A Safe, Loving Path to Adoption
                     </h2>
-                    <p className="section-subtitle text-indigo-200">
-                        We go above and beyond to ensure your furry family member receives the love and care they deserve.
+                    <p className="text-gray-300 max-w-2xl mx-auto text-lg">
+                        We're committed to ethical adoption practices and finding the perfect match for every dog and family.
                     </p>
                 </motion.div>
 
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                >
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
                     {trustFeatures.map((feature, index) => (
                         <motion.div
                             key={index}
-                            variants={cardVariants}
-                            className="group bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 hover:bg-white/20 transition-all duration-300"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-amber-400/30 transition-colors"
                         >
-                            <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform shadow-lg">
-                                {feature.icon}
-                            </div>
-
-                            <h3 className="text-xl font-bold text-white mb-3">
+                            <span className="text-4xl mb-4 block">{feature.icon}</span>
+                            <h3 className="text-xl font-semibold mb-3 text-white">
                                 {feature.title}
                             </h3>
-
-                            <p className="text-indigo-200 leading-relaxed">
+                            <p className="text-gray-400 leading-relaxed">
                                 {feature.description}
                             </p>
                         </motion.div>
                     ))}
+                </div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="bg-gradient-to-r from-amber-500/20 to-rose-500/20 backdrop-blur-lg rounded-3xl p-8 md:p-12 border border-white/10"
+                >
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                        {stats.map((stat, index) => (
+                            <div key={index}>
+                                <motion.div
+                                    initial={{ scale: 0 }}
+                                    whileInView={{ scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1, type: 'spring' }}
+                                    className="text-4xl md:text-5xl font-bold text-white mb-2"
+                                >
+                                    {stat.value}
+                                </motion.div>
+                                <p className="text-gray-300 font-medium">{stat.label}</p>
+                            </div>
+                        ))}
+                    </div>
                 </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.4 }}
-                    className="mt-32 bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/20"
+                    className="mt-12 text-center"
                 >
-                    <div className="grid md:grid-cols-3 gap-8 text-center mt-20">
-                        <div>
-                            <p className="text-5xl font-extrabold text-white mb-2">15,000+</p>
-                            <p className="text-indigo-200 font-medium">Dogs Cared For</p>
-                        </div>
-                        <div>
-                            <p className="text-5xl font-extrabold text-white mb-2">4.9★</p>
-                            <p className="text-indigo-200 font-medium">Average Rating</p>
-                        </div>
-                        <div>
-                            <p className="text-5xl font-extrabold text-white mb-2">8+ Years</p>
-                            <p className="text-indigo-200 font-medium">of Excellence</p>
-                        </div>
-                    </div>
+                    <p className="text-gray-300 mb-6 max-w-xl mx-auto">
+                        Every adoption helps us rescue more dogs. When you adopt, you're not just gaining a companion—you're saving a life.
+                    </p>
+                    <a href="#dogs" className="btn-primary">
+                        Find Your Match
+                    </a>
                 </motion.div>
             </div>
         </section>

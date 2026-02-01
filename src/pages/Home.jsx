@@ -1,11 +1,8 @@
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
-import Services from '../components/Services';
-import Trust from '../components/Trust';
-import Pricing from '../components/Pricing';
-import HowItWorks from '../components/HowItWorks';
-import Gallery from '../components/Gallery';
 import Adoption from '../components/Adoption';
+import HowItWorks from '../components/HowItWorks';
+import Trust from '../components/Trust';
 import Reviews from '../components/Reviews';
 import FAQ from '../components/FAQ';
 import CTA from '../components/CTA';
@@ -17,12 +14,9 @@ export default function Home() {
             <Navbar />
             <main>
                 <Hero />
-                <Services />
-                <Trust />
-                <Pricing />
-                <HowItWorks />
-                <Gallery />
                 <Adoption />
+                <HowItWorks />
+                <Trust />
                 <Reviews />
                 <FAQ />
                 <CTA />

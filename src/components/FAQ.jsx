@@ -5,25 +5,21 @@ import { faqs } from '../data/content';
 export default function FAQ() {
     const [openIndex, setOpenIndex] = useState(null);
 
-    const toggleFAQ = (index) => {
-        setOpenIndex(openIndex === index ? null : index);
-    };
-
     return (
-        <section id="faq" className="section-padding bg-gray-50">
+        <section id="faq" className="section-padding bg-white">
             <div className="container-custom">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-12"
                 >
-                    <span className="inline-block px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-semibold mb-4">
+                    <span className="inline-block px-4 py-2 bg-amber-100 text-amber-700 rounded-full text-sm font-semibold mb-4">
                         Got Questions?
                     </span>
-                    <h2 className="section-title">Frequently Asked Questions</h2>
+                    <h2 className="section-title">Adoption FAQs</h2>
                     <p className="section-subtitle">
-                        Find answers to the most common questions about our services.
+                        Everything you need to know about adopting your new best friend
                     </p>
                 </motion.div>
 
@@ -34,42 +30,41 @@ export default function FAQ() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.05 }}
+                            transition={{ delay: index * 0.1 }}
                             className="mb-4"
                         >
                             <button
-                                onClick={() => toggleFAQ(index)}
-                                className={`w-full text-left p-6 bg-white rounded-2xl shadow-soft transition-all ${openIndex === index ? 'ring-2 ring-indigo-500' : ''
-                                    }`}
+                                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                                className="w-full flex items-center justify-between p-5 bg-gray-50 hover:bg-gray-100 rounded-2xl transition-colors text-left"
                             >
-                                <div className="flex items-center justify-between gap-4">
-                                    <h3 className="font-bold text-gray-900 text-lg">
-                                        {faq.question}
-                                    </h3>
-                                    <motion.span
-                                        animate={{ rotate: openIndex === index ? 45 : 0 }}
-                                        className="flex-shrink-0 w-8 h-8 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl"
-                                    >
-                                        +
-                                    </motion.span>
-                                </div>
+                                <span className="font-semibold text-gray-900 pr-4">
+                                    {faq.question}
+                                </span>
+                                <motion.span
+                                    animate={{ rotate: openIndex === index ? 180 : 0 }}
+                                    className="text-2xl text-gray-400 flex-shrink-0"
+                                >
+                                    ▼
+                                </motion.span>
+                            </button>
 
-                                <AnimatePresence>
-                                    {openIndex === index && (
-                                        <motion.div
-                                            initial={{ height: 0, opacity: 0 }}
-                                            animate={{ height: 'auto', opacity: 1 }}
-                                            exit={{ height: 0, opacity: 0 }}
-                                            transition={{ duration: 0.3 }}
-                                            className="overflow-hidden"
-                                        >
-                                            <p className="mt-4 text-gray-600 leading-relaxed border-t pt-4">
+                            <AnimatePresence>
+                                {openIndex === index && (
+                                    <motion.div
+                                        initial={{ height: 0, opacity: 0 }}
+                                        animate={{ height: 'auto', opacity: 1 }}
+                                        exit={{ height: 0, opacity: 0 }}
+                                        transition={{ duration: 0.3 }}
+                                        className="overflow-hidden"
+                                    >
+                                        <div className="p-5 bg-white border border-gray-100 rounded-b-2xl -mt-2">
+                                            <p className="text-gray-600 leading-relaxed">
                                                 {faq.answer}
                                             </p>
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </button>
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
                         </motion.div>
                     ))}
                 </div>
@@ -83,9 +78,8 @@ export default function FAQ() {
                     <p className="text-gray-600 mb-4">
                         Still have questions? We're here to help!
                     </p>
-                    <a href="#contact" className="btn-primary">
+                    <a href="#contact" className="btn-secondary">
                         Contact Us
-                        <span>💬</span>
                     </a>
                 </motion.div>
             </div>

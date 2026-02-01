@@ -2,8 +2,6 @@ import { motion } from 'framer-motion';
 import { businessInfo } from '../data/content';
 
 export default function Hero() {
-
-
     return (
         <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-purple-50">
             <div className="absolute inset-0 overflow-hidden">
@@ -12,48 +10,62 @@ export default function Hero() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-100 rounded-full opacity-20 blur-3xl" />
             </div>
 
-            <div className="container-custom relative z-10 pt-40 pb-16">
+            <div className="container-custom relative z-10 pt-24 md:pt-40 pb-16">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <div className="flex items-center gap-2 mb-6">
-                            <span className="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-semibold">
 
-                            </span>
-                        </div>
 
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-                            Your Dog Deserves{' '}
-                            <span className="text-gradient">Premium Care</span>{' '}
-                            & Endless Love
+                            Find Your{' '}
+                            <span className="text-gradient">Forever Friend</span>{' '}
                         </h1>
 
                         <p className="text-lg text-gray-600 mb-8 max-w-lg">
-                            At {businessInfo.name}, we treat every pup like family. From cozy boarding to spa-day grooming,
-                            your furry friend is in safe, loving hands—always.
+                            Browse loving dogs waiting for a home. Every adoption saves a life and creates a bond that lasts forever. Your perfect companion is waiting for you at {businessInfo.name}.
                         </p>
 
                         <div className="flex flex-wrap gap-4 mb-10">
                             <motion.a
-                                href="#contact"
+                                href="#dogs"
                                 className="btn-primary text-lg px-8 py-4"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                             >
-                                Book a Visit
-                                <span>→</span>
+                                Adopt a Dog
                             </motion.a>
                             <motion.a
-                                href="#services"
+                                href="#how-it-works"
                                 className="btn-secondary text-lg px-8 py-4"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                             >
-                                View Services
+                                How Adoption Works
                             </motion.a>
+                        </div>
+
+                        <div className="flex flex-wrap gap-6">
+                            {[
+                                { icon: '✓', text: 'Health Checked' },
+                                { icon: '✓', text: 'Vaccinated' },
+                                { icon: '✓', text: 'Lifetime Support' },
+                            ].map((badge, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.5 + index * 0.1 }}
+                                    className="flex items-center gap-2 text-gray-700"
+                                >
+                                    <span className="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm font-bold">
+                                        {badge.icon}
+                                    </span>
+                                    <span className="font-medium">{badge.text}</span>
+                                </motion.div>
+                            ))}
                         </div>
                     </motion.div>
 
@@ -74,7 +86,6 @@ export default function Hero() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                         </div>
-
 
 
                     </motion.div>

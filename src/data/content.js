@@ -1,108 +1,140 @@
-export const services = [
-    {
-        id: 1,
-        name: "Dog Boarding",
-        description: "Safe, comfortable overnight stays with 24/7 supervision, spacious suites, and plenty of playtime.",
-        priceFrom: 45,
-        duration: "per night",
-        features: ["Climate-controlled rooms", "Daily exercise", "Webcam access", "Medication administration"],
-        icon: "🏠"
-    },
-    {
-        id: 2,
-        name: "Dog Walking",
-        description: "Professional walks tailored to your dog's energy level and needs, rain or shine.",
-        priceFrom: 25,
-        duration: "per walk",
-        features: ["GPS tracking", "Photo updates", "Flexible scheduling", "Group or solo walks"],
-        icon: "🚶"
-    },
-    {
-        id: 3,
-        name: "Dog Grooming",
-        description: "Full-service spa treatments from baths to breed-specific styling by certified groomers.",
-        priceFrom: 40,
-        duration: "per session",
-        features: ["Bath & brush", "Nail trimming", "Ear cleaning", "Premium products"],
-        icon: "✨"
-    },
-    {
-        id: 4,
-        name: "Dog Adoption",
-        description: "Find your forever friend! We partner with local rescues to help dogs find loving homes.",
-        priceFrom: 0,
-        duration: "free consultation",
-        features: ["Meet & greet sessions", "Behavior assessment", "Post-adoption support", "Vet records included"],
-        icon: "❤️"
-    },
-    {
-        id: 5,
-        name: "Dog Breeding",
-        description: "Ethical breeding services with health-tested parents, veterinary oversight, and lifetime support.",
-        priceFrom: 150,
-        duration: "consultation",
-        features: ["Health screening", "Genetic testing", "Puppy socialization", "Registration papers"],
-        icon: "🐕"
-    }
-];
-
-export const gallery = [
-    { id: 1, type: "image", url: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800", category: "play" },
-    { id: 2, type: "image", url: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800", category: "grooming" },
-    { id: 3, type: "image", url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=800", category: "play" },
-    { id: 4, type: "image", url: "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=800", category: "facility" },
-    { id: 5, type: "image", url: "https://images.unsplash.com/photo-1560807707-8cc77767d783?w=800", category: "boarding" },
-    { id: 6, type: "image", url: "https://images.unsplash.com/photo-1544568100-847a948585b9?w=800", category: "play" },
-    { id: 7, type: "image", url: "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=800", category: "grooming" },
-    { id: 8, type: "image", url: "https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?w=800", category: "facility" },
-    { id: 9, type: "video", url: "https://videos.pexels.com/video-files/4148028/4148028-hd_1920_1080_25fps.mp4", category: "play" },
-];
-
+// Adoptable Dogs - Enhanced with full profile data
 export const adoptionDogs = [
     {
         id: 1,
         name: "Max",
         age: "2 years",
+        ageCategory: "Adult",
+        breed: "Golden Retriever Mix",
+        gender: "Male",
         size: "Medium",
+        vaccinated: true,
+        neutered: true,
         temperamentTags: ["Friendly", "Good with kids", "Trained"],
+        compatibility: {
+            kids: true,
+            dogs: true,
+            cats: false,
+            apartments: false
+        },
         images: ["https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600"],
+        story: "Max was found wandering the streets, but his gentle spirit never faded. He's been with us for 3 months and has blossomed into the most loving companion. He dreams of a family with a backyard where he can play fetch all day.",
         description: "Max is a playful Golden Retriever mix who loves fetch and cuddles. He's great with children and other dogs."
     },
     {
         id: 2,
         name: "Luna",
         age: "1 year",
+        ageCategory: "Puppy",
+        breed: "Beagle",
+        gender: "Female",
         size: "Small",
+        vaccinated: true,
+        neutered: true,
         temperamentTags: ["Energetic", "Loyal", "Apartment-friendly"],
-        images: ["https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600"],
+        compatibility: {
+            kids: true,
+            dogs: true,
+            cats: true,
+            apartments: true
+        },
+        images: ["https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?w=600"],
+        story: "Luna was surrendered when her previous owner moved overseas. She's a bundle of joy who quickly became everyone's favorite at the shelter. She's looking for an active family to match her endless energy.",
         description: "Luna is a sweet Beagle with endless energy. Perfect for active families who love outdoor adventures."
     },
     {
         id: 3,
         name: "Rocky",
         age: "4 years",
+        ageCategory: "Adult",
+        breed: "Labrador Retriever",
+        gender: "Male",
         size: "Large",
+        vaccinated: true,
+        neutered: true,
         temperamentTags: ["Calm", "Good with cats", "Gentle giant"],
+        compatibility: {
+            kids: true,
+            dogs: true,
+            cats: true,
+            apartments: false
+        },
         images: ["https://images.unsplash.com/photo-1560807707-8cc77767d783?w=600"],
+        story: "Rocky spent his early years as a therapy dog. When his handler retired, Rocky came to us. He's incredibly gentle and patient, making him perfect for families with small children or other pets.",
         description: "Rocky is a gentle Labrador who enjoys lazy afternoons and belly rubs. Great for families with cats."
     },
     {
         id: 4,
         name: "Bella",
         age: "3 years",
+        ageCategory: "Adult",
+        breed: "Border Collie Mix",
+        gender: "Female",
         size: "Medium",
+        vaccinated: true,
+        neutered: true,
         temperamentTags: ["Smart", "Active", "Loves water"],
+        compatibility: {
+            kids: true,
+            dogs: true,
+            cats: false,
+            apartments: false
+        },
         images: ["https://images.unsplash.com/photo-1544568100-847a948585b9?w=600"],
+        story: "Bella was rescued from a farm where she wasn't getting the mental stimulation she needed. She's incredibly intelligent and thrives with puzzle toys and agility training. She's looking for an active owner who can keep up with her!",
         description: "Bella is an intelligent Border Collie mix who excels at agility and loves swimming."
+    },
+    {
+        id: 5,
+        name: "Charlie",
+        age: "6 years",
+        ageCategory: "Senior",
+        breed: "Cocker Spaniel",
+        gender: "Male",
+        size: "Medium",
+        vaccinated: true,
+        neutered: true,
+        temperamentTags: ["Gentle", "Quiet", "Low energy"],
+        compatibility: {
+            kids: true,
+            dogs: true,
+            cats: true,
+            apartments: true
+        },
+        images: ["https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=600"],
+        story: "Charlie's owner passed away, and he's been patiently waiting for a new loving home. He's the perfect couch companion who just wants someone to love him in his golden years.",
+        description: "Charlie is a calm senior dog who loves cuddles and short walks. Perfect for a quiet home."
+    },
+    {
+        id: 6,
+        name: "Daisy",
+        age: "8 months",
+        ageCategory: "Puppy",
+        breed: "Poodle Mix",
+        gender: "Female",
+        size: "Small",
+        vaccinated: true,
+        neutered: false,
+        temperamentTags: ["Playful", "Hypoallergenic", "Smart"],
+        compatibility: {
+            kids: true,
+            dogs: true,
+            cats: true,
+            apartments: true
+        },
+        images: ["https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?w=600"],
+        story: "Daisy was born at a rescue and has never known anything but love. She's a fluffy ball of happiness who would make an amazing first dog for any family.",
+        description: "Daisy is an adorable Poodle mix puppy who's hypoallergenic and loves everyone she meets."
     }
 ];
 
+// Adoption success stories
 export const reviews = [
     {
         id: 1,
         ownerName: "Sarah Mitchell",
         rating: 5,
-        comment: "Bentex Kennel has been incredible! My anxious rescue felt at home within hours. The daily photo updates gave me such peace of mind.",
+        comment: "We adopted Cooper 6 months ago and he's become the heart of our family. The team at Bentex made the whole process so smooth and supportive!",
         dogName: "Cooper",
         image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200"
     },
@@ -110,7 +142,7 @@ export const reviews = [
         id: 2,
         ownerName: "James Chen",
         rating: 5,
-        comment: "The grooming service is outstanding. My poodle looks magazine-ready every time. The staff truly cares about each dog.",
+        comment: "After losing our old dog, we weren't sure if we were ready. Bentex helped us find Coco, and she's brought so much joy back into our lives.",
         dogName: "Coco",
         image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200"
     },
@@ -118,7 +150,7 @@ export const reviews = [
         id: 3,
         ownerName: "Emily Rodriguez",
         rating: 5,
-        comment: "We adopted our sweet Luna through Bentex Kennel. The process was seamless and the support afterward has been amazing.",
+        comment: "We adopted Luna for our daughter's birthday. The process was seamless and the follow-up support has been amazing. Luna is now her best friend!",
         dogName: "Luna",
         image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200"
     },
@@ -126,7 +158,7 @@ export const reviews = [
         id: 4,
         ownerName: "Michael Thompson",
         rating: 5,
-        comment: "The dog walking service is a lifesaver for my busy schedule. GPS tracking and photo updates keep me connected with Max.",
+        comment: "As a first-time dog owner, I was nervous. The Bentex team answered all my questions and matched me with Max, who's been the perfect companion.",
         dogName: "Max",
         image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200"
     },
@@ -134,101 +166,111 @@ export const reviews = [
         id: 5,
         ownerName: "Amanda Foster",
         rating: 5,
-        comment: "Cleanest facility I've ever seen. The staff knows every dog by name. It's clear they genuinely love what they do.",
+        comment: "We adopted a senior dog named Buddy and it's been the most rewarding experience. Bentex truly cares about finding the right match for every dog.",
         dogName: "Buddy",
         image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200"
     }
 ];
 
+// Adoption-focused FAQs
 export const faqs = [
     {
-        question: "What vaccinations are required for boarding?",
-        answer: "All dogs must be up-to-date on Rabies, DHPP, and Bordetella vaccines. We require proof of vaccination at least 48 hours before their stay. If your dog isn't current, we can recommend trusted local vets."
+        question: "What is the adoption process?",
+        answer: "Our adoption process is simple: Browse our available dogs, submit an application, schedule a meet-and-greet, and if it's a match, take your new friend home! The entire process typically takes 3-7 days."
     },
     {
-        question: "How do you ensure my dog's safety?",
-        answer: "Safety is our top priority. Our facility features 24/7 staff supervision, secure fencing, climate control, and separate play areas by size and temperament. All staff are certified in pet first aid and CPR."
+        question: "Is there an adoption fee?",
+        answer: "Yes, our adoption fee ranges from $50-$150 depending on the dog's age and medical needs. This fee covers vaccinations, spaying/neutering, microchipping, and a health checkup. It's a small investment for a lifetime of love!"
     },
     {
-        question: "What are the drop-off and pick-up times?",
-        answer: "Standard hours are 7 AM - 7 PM daily. Early drop-off (6 AM) and late pick-up (9 PM) are available for an additional fee. We're closed on major holidays but offer holiday boarding packages."
+        question: "Are the dogs vaccinated and health-checked?",
+        answer: "Absolutely! Every dog in our care receives a full veterinary examination, up-to-date vaccinations, flea/tick treatment, and is spayed or neutered before adoption. We also provide complete medical records."
     },
     {
-        question: "What is your cancellation policy?",
-        answer: "Cancellations made 48+ hours before the reservation receive a full refund. Cancellations within 24-48 hours receive a 50% refund. Same-day cancellations are non-refundable, except for emergencies."
+        question: "Can I return a dog if it doesn't work out?",
+        answer: "We understand that sometimes things don't work out. We have a 30-day adjustment period where you can return the dog with no questions asked. We'd rather a dog come back to us than end up in a bad situation."
     },
     {
-        question: "Can I bring my dog's own food and belongings?",
-        answer: "Absolutely! We encourage bringing your dog's regular food to maintain their diet. You may also bring a favorite toy or blanket. Please label all items with your dog's name."
+        question: "Do you do home visits?",
+        answer: "For certain adoptions, especially with large breeds or dogs with special needs, we may conduct a brief home visit to ensure the environment is suitable. This is to protect both you and the dog."
     },
     {
-        question: "How do you handle dogs with medical needs?",
-        answer: "We're experienced with insulin injections, oral medications, and special diets. Our staff includes certified veterinary technicians. Please discuss specific needs during your consultation."
+        question: "Can I adopt if I live in an apartment?",
+        answer: "Yes! Many of our dogs are apartment-friendly. We'll help you find a dog whose energy level and size are suitable for apartment living. Look for the 'Apartment-friendly' tag on dog profiles."
     }
 ];
 
+// Why adopt from us - trust features
 export const trustFeatures = [
     {
-        title: "Trained & Certified Staff",
-        description: "Every team member is certified in pet first aid, CPR, and animal behavior. We invest in ongoing training.",
-        icon: "🎓"
+        title: "Ethical Adoption",
+        description: "Every dog deserves a loving home. We never euthanize adoptable dogs and work tirelessly to find the perfect match.",
+        icon: "❤️"
     },
     {
-        title: "Clean & Sanitized Facility",
-        description: "Hospital-grade cleaning protocols ensure a spotless, hygienic environment. Inspected monthly.",
-        icon: "🧼"
-    },
-    {
-        title: "24/7 Vet Support",
-        description: "Partnership with local veterinary clinics means immediate care is always available for emergencies.",
+        title: "Health Guaranteed",
+        description: "All dogs are fully vaccinated, microchipped, and receive a complete health check before going to their forever home.",
         icon: "🏥"
     },
     {
-        title: "Daily Photo & Video Updates",
-        description: "Stay connected with your furry friend through our app. See photos, videos, and activity reports daily.",
-        icon: "📱"
+        title: "Lifetime Support",
+        description: "Our relationship doesn't end at adoption. We provide ongoing support, training resources, and advice for life.",
+        icon: "🤝"
+    },
+    {
+        title: "Perfect Matching",
+        description: "We take time to understand your lifestyle and match you with a dog whose personality and needs fit your family.",
+        icon: "🎯"
     }
 ];
 
+// Adoption process steps
 export const howItWorks = [
     {
         step: 1,
-        title: "Book Online",
-        description: "Choose your service, select dates, and book instantly through our website. It takes less than 2 minutes."
+        title: "Browse Dogs",
+        description: "Explore our adoptable dogs and find one that catches your heart. Filter by age, size, and personality."
     },
     {
         step: 2,
-        title: "Meet & Drop-off",
-        description: "First-timers get a complimentary tour. Drop off your pup and let us handle the rest."
+        title: "Apply to Adopt",
+        description: "Fill out a simple application telling us about yourself and your home. It only takes 5 minutes."
     },
     {
         step: 3,
-        title: "Care & Updates",
-        description: "Your dog enjoys premium care while you receive photos, videos, and updates throughout their stay."
+        title: "Meet & Greet",
+        description: "Schedule a visit to meet your potential new family member. See if you're the perfect match!"
+    },
+    {
+        step: 4,
+        title: "Take Home",
+        description: "Complete the adoption, receive all records and supplies, and welcome your new best friend home!"
     }
 ];
 
+// Adoption statistics
 export const stats = [
-    { value: "15,000+", label: "Happy Dogs Served" },
-    { value: "4.9", label: "Average Rating" },
-    { value: "8+", label: "Years Experience" },
-    { value: "50+", label: "Team Members" }
+    { value: "500+", label: "Dogs Adopted" },
+    { value: "100%", label: "Satisfaction Rate" },
+    { value: "5+", label: "Years Rescuing" },
+    { value: "0", label: "Dogs Left Behind" }
 ];
 
+// Business information - adoption focused
 export const businessInfo = {
-    name: "Bentex Kennel",
-    tagline: "Where Every Tail Wags",
+    name: "Bentex Adoption",
+    tagline: "Find Your Forever Friend",
     phone: "+234 813 025 4420",
     email: "usojishikin@gmail.com",
     address: "Mandong drive ECWA staff",
     hours: {
-        weekdays: "7:00 AM - 7:00 PM",
-        weekends: "8:00 AM - 6:00 PM"
+        weekdays: "9:00 AM - 6:00 PM",
+        weekends: "10:00 AM - 4:00 PM"
     },
     social: {
-        instagram: "https://instagram.com/pawfectcare",
-        facebook: "https://facebook.com/pawfectcare",
-        twitter: "https://twitter.com/pawfectcare",
-        tiktok: "https://tiktok.com/@pawfectcare"
+        instagram: "https://instagram.com/bentexadoption",
+        facebook: "https://facebook.com/bentexadoption",
+        twitter: "https://twitter.com/bentexadoption",
+        tiktok: "https://tiktok.com/@bentexadoption"
     }
 };
